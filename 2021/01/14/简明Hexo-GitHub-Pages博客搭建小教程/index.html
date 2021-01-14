@@ -22,29 +22,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CYK随笔">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="一直想搭建自己的博客，但又不想选择思否，简书等第三方平台，所以就有了这么一次探索GitHub Pages的过程。众所周知GitHub对程序员的友好性，以及其平台本身自带的便利，都让我对在GitHub上host自己的博客产生了动力。本人并不是专业的前端开发，所以许多操作以满足功能为主。如有疏漏或更好解决方案，欢迎留言评论。  Hexo官方文档   1 安装环境1.1 安装Git过程就不赘述了，方法有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简明Hexo+GitHub Pages博客搭建小教程">
+<meta property="og:url" content="http://example.com/2021/01/14/%E7%AE%80%E6%98%8EHexo-GitHub-Pages%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%B0%8F%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="CYK随笔">
+<meta property="og:description" content="一直想搭建自己的博客，但又不想选择思否，简书等第三方平台，所以就有了这么一次探索GitHub Pages的过程。众所周知GitHub对程序员的友好性，以及其平台本身自带的便利，都让我对在GitHub上host自己的博客产生了动力。本人并不是专业的前端开发，所以许多操作以满足功能为主。如有疏漏或更好解决方案，欢迎留言评论。  Hexo官方文档   1 安装环境1.1 安装Git过程就不赘述了，方法有">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-14T13:35:26.000Z">
+<meta property="article:modified_time" content="2021-01-14T16:43:14.945Z">
 <meta property="article:author" content="Yikai Cao">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/01/14/%E7%AE%80%E6%98%8EHexo-GitHub-Pages%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%B0%8F%E6%95%99%E7%A8%8B/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>CYK随笔</title>
+  <title>简明Hexo+GitHub Pages博客搭建小教程 | CYK随笔</title>
   
 
 
@@ -132,7 +136,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -144,6 +148,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="nav-text">1 安装环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%AE%89%E8%A3%85Git"><span class="nav-text">1.1 安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%AE%89%E8%A3%85Node-js"><span class="nav-text">1.2 安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%AE%89%E8%A3%85Hexo"><span class="nav-text">1.3 安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%9C%AC%E5%9C%B0%E5%BB%BA%E7%AB%99"><span class="nav-text">2 本地建站</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%88%9D%E5%A7%8B%E5%8C%96Hexo"><span class="nav-text">2.1 初始化Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E5%86%99%E6%96%87%E7%AB%A0"><span class="nav-text">2.2 写文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E5%90%AF%E5%8A%A8Hexo%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">2.3 启动Hexo本地服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-text">2.4 生成静态文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2"><span class="nav-text">3 一键部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%88%9B%E5%BB%BAGitHub%E4%BB%93%E5%BA%93"><span class="nav-text">3.1 创建GitHub仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0Git%E5%AF%86%E9%92%A5"><span class="nav-text">3.2 配置本地Git密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E6%9B%B4%E6%94%B9Hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">3.3 更改Hexo配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%E5%8F%91%E5%B8%83"><span class="nav-text">3.4 发布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E4%B8%AA%E6%80%A7%E9%85%8D%E7%BD%AE"><span class="nav-text">4 个性配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E4%BD%BF%E7%94%A8Next%E4%B8%BB%E9%A2%98"><span class="nav-text">4.1 使用Next主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E9%85%8D%E7%BD%AEGitalk"><span class="nav-text">4.2 配置Gitalk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E6%B7%BB%E5%8A%A0%E9%98%85%E8%AF%BB%E7%BB%9F%E8%AE%A1"><span class="nav-text">4.3 添加阅读统计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%B8%A9%E5%9D%91"><span class="nav-text">5 踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E5%9B%BE%E5%BA%8A%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">5.1 图床的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="nav-text">5.2 更换主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TL-DR"><span class="nav-text">TL;DR</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AC%A2%E8%BF%8E%E8%AF%BB%E5%88%B0%E8%BF%99%E9%87%8C%E3%80%82%E4%BB%A5%E4%B8%8B%E5%BC%80%E5%A7%8B%E5%88%86%E4%BA%AB%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B9%B2%E8%B4%A7%E5%86%85%E5%AE%B9%E3%80%82"><span class="nav-text">欢迎读到这里。以下开始分享自己的干货内容。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-text">结语</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -187,11 +192,12 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
       
 
       
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -210,10 +216,9 @@
     
     
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/14/%E7%AE%80%E6%98%8EHexo-GitHub-Pages%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%B0%8F%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">简明Hexo+GitHub Pages博客搭建小教程</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          简明Hexo+GitHub Pages博客搭建小教程
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -243,7 +248,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>一直想搭建自己的博客，但又不想选择思否，简书等第三方平台，所以就有了这么一次探索GitHub Pages的过程。众所周知GitHub对程序员的友好性，以及其平台本身自带的便利，都让我对在GitHub上host自己的博客产生了动力。本人并不是专业的前端开发，所以许多操作以满足功能为主。如有疏漏或更好解决方案，欢迎留言评论。</p>
+        <p>一直想搭建自己的博客，但又不想选择思否，简书等第三方平台，所以就有了这么一次探索GitHub Pages的过程。众所周知GitHub对程序员的友好性，以及其平台本身自带的便利，都让我对在GitHub上host自己的博客产生了动力。本人并不是专业的前端开发，所以许多操作以满足功能为主。如有疏漏或更好解决方案，欢迎留言评论。</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/docs/">Hexo官方文档</a></p>
 </blockquote>
@@ -288,7 +293,6 @@
 <p>我的个人方案<br>a. 从两个方面分别保证可移植性及方便存储。一是使用Markdown编写，二是使用Git存储。由于我的内容是以文字和代码居多，都是类似于README.MD这样的post，偶尔需要少量的截图，因此GitHub天生自带的版本控制以及云端存储空间为我的内容提供了很好的存储平台。使用Markdown也是因为其相比Latex简单得多的语法，以及其标记语言可以方便被多种工具转换成HTML格式。<br>b. 既然选择了Markdown作为底层语言，只要平台支持转换，就可以迅速完成发布。这篇文章就是用Markdown 写的。这也是为什么我推荐将静态网页和Hexo posts本身分作两个repo放在GitHub上。甚至Gitalk comment也是放在独立的repo，方便日后移植。<br>c. 这也就是为什么用到了Hexo。将你的MD作为内容保存起来，今天可以是Hexo，明天可以是Jekyll，很多工具都可以生成静态网页。其他对我来说，正如导言提到的，我不是前端程序员，我的博客是用来分享我的内容，内容为核心，而不是博客上的样式主题。有了容易生成并且容易部署的静态网页，就可以在任意主机上实现部署。当然你也可以用插件快速添加你想要的功能，如之前所示的Gitalk就是Hexo上Next主题的推荐评论插件。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>很早以前互联网就有提出内容为王的概念，而今我们的APP上大量地充斥着质量参差不齐的自媒体，巨头把控流量入口。似乎大趋势总是在内容和营销两极中不断达到动态平衡。<br>今天分享的Hexo+GitHub Pages即Markdown+静态网页这种多平台快速部署的案例希望可以作为一个启发。毕竟在5G时代大背景下，只用Markdown纯文字很快就会被更立体的内容所替代。<br>如果以后我还有时间或是有其他人以Publish as a Service这种思维出发，兼顾优质内容和快速引流，在5G时代下用更多新的优质内容造福广大用户，倒也未尝不可。</p>
 
-      
     </div>
 
     
@@ -296,8 +300,18 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/01/10/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
   
@@ -305,14 +319,9 @@
   
 
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
 
       
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -391,6 +400,25 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments('#gitalk-container', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '58cf60da325b66d9583a',
+      clientSecret: '4316036ba7edfcba5a5598789adde4aa2beeb4c5',
+      repo        : 'hexo-yikaicao-comment',
+      owner       : 'yikaicao',
+      admin       : ['yikaicao'],
+      id          : 'b307b2885a643fb0c73f33d5a688f3d3',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
